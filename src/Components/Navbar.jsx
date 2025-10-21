@@ -47,7 +47,7 @@ const Navbar = () => {
             </ul>
           </div>
           <a className="btn btn-ghost text-xl font-bold text-emerald-500">
-            <FaGraduationCap /> LEARNOVA
+            <FaGraduationCap className="text-3xl" /> LEARNOVA
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
