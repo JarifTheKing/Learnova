@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaGraduationCap, FaUserTie } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
+import { MdLogin } from "react-icons/md";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    // console.log("Log Out");
+    logOut();
+  };
   return (
     <div>
       <div className="navbar bg-emerald-50 shadow-md">
@@ -29,19 +37,14 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <NavLink>
+              <NavLink to="/">
                 <li className="font-bold text-emerald-500">
-                  <a>Logo</a>
+                  <a>Home</a>
                 </li>
               </NavLink>
-              <NavLink>
+              <NavLink to="/myProfile">
                 <li className="font-bold text-emerald-500">
-                  <a>Logo</a>
-                </li>
-              </NavLink>
-              <NavLink>
-                <li className="font-bold text-emerald-500">
-                  <a>Logo</a>
+                  <a>My Profile</a>
                 </li>
               </NavLink>
             </ul>
@@ -52,37 +55,59 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <NavLink>
-              <li className="font-bold text-emerald-500">
-                <a>Logo</a>
-              </li>
-            </NavLink>
-            <NavLink>
+            <NavLink to="/">
               <li className="font-bold text-emerald-500">
                 <a>Home</a>
               </li>
             </NavLink>
-            <NavLink>
+            <NavLink to="/myProfile">
               <li className="font-bold text-emerald-500">
                 <a>My Profile</a>
               </li>
             </NavLink>
           </ul>
         </div>
-        <div className="navbar-end flex items-center gap-4 mr-1">
-          <img
-            className="rounded-full border border-emerald-600"
-            width="50"
-            height="50"
-            src="https://img.icons8.com/3d-fluency/94/guest-male--v3.png"
-            alt="guest-male--v3"
-          />
-          <Link to="/login">
-            <a className="btn bg-emerald-600 hover:bg-cyan-700 text-white">
-              Log In
-            </a>
-          </Link>
-        </div>
+
+        {/* User & Button */}
+        {user ? (
+          <div className="navbar-end flex items-center gap-4 mr-1">
+            <div className="relative group flex flex-col items-center">
+              <img
+                className="rounded-full border border-emerald-600 cursor-pointer transition-transform duration-300 group-hover:scale-110"
+                width="50"
+                height="50"
+                src="https://img.icons8.com/3d-fluency/94/guest-male--v3.png"
+                alt="guest-male--v3"
+              />
+
+              <h2 className="absolute bottom-[-30px] text-sm font-bold text-emerald-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {user?.name || "Guest"}
+              </h2>
+            </div>
+
+            <Link>
+              <button
+                onClick={handleLogOut}
+                className="btn bg-emerald-600 hover:bg-cyan-700 text-white"
+              >
+                Log Out
+              </button>
+            </Link>
+          </div>
+        ) : (
+          <div className="navbar-end flex items-center gap-4 mr-1">
+            <Link to="/login">
+              <a className="btn bg-emerald-600 hover:bg-cyan-700 text-white">
+                Log In <MdLogin className="text-xl" />
+              </a>
+            </Link>
+            <Link to="/register">
+              <a className="btn bg-emerald-600 hover:bg-cyan-700 text-white">
+                Register
+              </a>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
