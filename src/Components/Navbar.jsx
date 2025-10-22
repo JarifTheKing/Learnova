@@ -1,11 +1,11 @@
 import React from "react";
 import { FaGraduationCap, FaUserTie } from "react-icons/fa";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-emerald-50 shadow-md">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,7 +69,7 @@ const Navbar = () => {
             </NavLink>
           </ul>
         </div>
-        <div className="navbar-end flex items-center gap-4">
+        <div className="navbar-end flex items-center gap-4 mr-1">
           <img
             className="rounded-full border border-emerald-600"
             width="50"
@@ -77,9 +77,11 @@ const Navbar = () => {
             src="https://img.icons8.com/3d-fluency/94/guest-male--v3.png"
             alt="guest-male--v3"
           />
-          <a className="btn bg-emerald-600 hover:bg-cyan-700 text-white">
-            Log In
-          </a>
+          <Link to="/login">
+            <a className="btn bg-emerald-600 hover:bg-cyan-700 text-white">
+              Log In
+            </a>
+          </Link>
         </div>
       </div>
     </div>
