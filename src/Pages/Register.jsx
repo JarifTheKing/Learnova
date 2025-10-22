@@ -32,7 +32,7 @@ const Register = () => {
           <div className="backdrop-blur-sm bg-black/10 rounded-2xl p-6 sm:p-8">
             {/* Logo & Heading */}
             <div className="text-center text-white mb-6">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
+              <h1 className="text-2xl fontStyle sm:text-3xl md:text-4xl font-bold tracking-wide">
                 Learnova
               </h1>
               <p className="text-sm sm:text-base mt-1">

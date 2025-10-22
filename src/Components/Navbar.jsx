@@ -50,8 +50,8 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/">
-            <a className="btn btn-ghost text-xl font-bold text-emerald-500">
-              <FaGraduationCap className="text-3xl" /> LEARNOVA
+            <a className="btn btn-ghost text-xl lg:text-4xl font-bold text-emerald-500 fontStyle ">
+              <FaGraduationCap className="lg:text-4xl text-xl" /> LEARNOVA
             </a>
           </Link>
         </div>
@@ -97,15 +97,17 @@ const Navbar = () => {
             </Link>
           </div>
         ) : (
-          <div className="navbar-end flex items-center gap-4 mr-1">
+          <div className="navbar-end flex items-center gap-1 lg:gap-4 mr-1">
+            <img
+              width="40"
+              height="40"
+              src="https://img.icons8.com/dotty/80/test-account.png"
+              alt="test-account"
+            />
+
             <Link to="/auth/login">
-              <a className="btn bg-emerald-600 hover:bg-cyan-700 text-white">
+              <a className="btn  bg-emerald-600 hover:bg-cyan-700 text-white">
                 Log In <MdLogin className="text-xl" />
-              </a>
-            </Link>
-            <Link to="/auth/register">
-              <a className="btn bg-emerald-600 hover:bg-cyan-700 text-white">
-                Register
               </a>
             </Link>
           </div>
