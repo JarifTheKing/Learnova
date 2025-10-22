@@ -49,9 +49,11 @@ const Navbar = () => {
               </NavLink>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl font-bold text-emerald-500">
-            <FaGraduationCap className="text-3xl" /> LEARNOVA
-          </a>
+          <Link to="/">
+            <a className="btn btn-ghost text-xl font-bold text-emerald-500">
+              <FaGraduationCap className="text-3xl" /> LEARNOVA
+            </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -96,12 +98,12 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="navbar-end flex items-center gap-4 mr-1">
-            <Link to="/login">
+            <Link to="/auth/login">
               <a className="btn bg-emerald-600 hover:bg-cyan-700 text-white">
                 Log In <MdLogin className="text-xl" />
               </a>
             </Link>
-            <Link to="/register">
+            <Link to="/auth/register">
               <a className="btn bg-emerald-600 hover:bg-cyan-700 text-white">
                 Register
               </a>
