@@ -6,9 +6,15 @@ const Footer = () => {
     <div>
       <footer className="footer footer-horizontal footer-center shadow-lg bg-emerald-100 text-base-content rounded p-10">
         <ul className="grid grid-flow-col font-bold gap-4">
-          <Link className="hover:text-emerald-700">About us</Link>
-          <Link className="hover:text-emerald-700">Contact</Link>
-          <Link className="hover:text-emerald-700">Press kit</Link>
+          <Link to="/" className="hover:text-emerald-700">
+            About us
+          </Link>
+          <Link to="/" className="hover:text-emerald-700">
+            Contact
+          </Link>
+          <Link to="/" className="hover:text-emerald-700">
+            Press kit
+          </Link>
         </ul>
 
         <div className="grid grid-flow-col gap-4">

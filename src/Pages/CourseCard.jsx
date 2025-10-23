@@ -24,7 +24,7 @@ const CourseCard = ({ skill }) => {
             <hr className="my-2 border-gray-200" />
 
             <div className="flex justify-between items-center text-sm text-gray-700">
-              <p>⭐ Rating: {rating}</p>
+              <p> Rating: ⭐ {rating}</p>
               <p> Price: $ {price}</p>
             </div>
           </div>

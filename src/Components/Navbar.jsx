@@ -7,13 +7,13 @@ import { MdLogin } from "react-icons/md";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
-  const handleLogOut = () => {
-    // console.log("Log Out");
-    logOut();
-  };
+  // const handleLogOut = () => {
+  //   // console.log("Log Out");
+  //   logOut();
+  // };
   return (
     <div>
-      <div className="navbar bg-emerald-50 shadow-md">
+      <div className="navbar bg-emerald-100 shadow-md">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -67,31 +67,31 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* User & Button */}
+        {/* User */}
         {user ? (
           <div className="navbar-end flex items-center gap-4 mr-1">
-            <div className="relative group flex flex-col items-center">
+            <div className="group relative flex flex-col items-center">
               <img
                 className="rounded-full border border-emerald-600 cursor-pointer transition-transform duration-300 group-hover:scale-110"
                 width="50"
                 height="50"
-                src="https://img.icons8.com/3d-fluency/94/guest-male--v3.png"
-                alt="guest-male--v3"
+                src={
+                  user?.photoURL ||
+                  "https://img.icons8.com/3d-fluency/94/guest-male--v3.png"
+                }
+                alt="user"
               />
-
-              <h2 className="absolute bottom-[-30px] text-sm font-bold text-emerald-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {user?.name || "Guest"}
+              <h2 className="absolute left-[-120px] top-[10px] text-sm bg-emerald-500 text-white p-2 rounded-md font-bold  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {user?.displayName || "Guest"}
               </h2>
             </div>
 
-            <Link>
-              <button
-                onClick={handleLogOut}
-                className="btn bg-emerald-600 hover:bg-cyan-700 text-white"
-              >
-                Log Out
-              </button>
-            </Link>
+            <button
+              onClick={logOut}
+              className="btn bg-emerald-600 hover:bg-cyan-700 text-white"
+            >
+              Log Out
+            </button>
           </div>
         ) : (
           <div className="navbar-end flex items-center gap-1 lg:gap-4 mr-1">
@@ -101,12 +101,11 @@ const Navbar = () => {
               src="https://img.icons8.com/dotty/80/test-account.png"
               alt="test-account"
             />
-
             <Link
               to="/auth/login"
-              className="btn  bg-emerald-600 hover:bg-cyan-700 text-white"
+              className="btn bg-emerald-600 hover:bg-cyan-700 text-white"
             >
-              Log In <MdLogin className="text-xl" />
+              Log In
             </Link>
           </div>
         )}

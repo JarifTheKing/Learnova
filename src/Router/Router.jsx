@@ -7,6 +7,9 @@ import MyProfile from "../Pages/MyProfile";
 import AuthLayout from "../Layouts/AuthLayout";
 import CourseCard from "../Pages/CourseCard";
 import CourseDetails from "../Pages/CourseDetails";
+import PrivateRoute from "../PrivetRouter/PrivetRoute";
+import UpdateProfile from "../Pages/UpdateProfile";
+import ForgetPass from "../Pages/ForgetPass";
 
 const router = createBrowserRouter([
   {
@@ -27,12 +30,28 @@ const router = createBrowserRouter([
       },
       {
         path: "/courseDetails/:id",
-        element: <CourseDetails></CourseDetails>,
+        element: (
+          <PrivateRoute>
+            <CourseDetails />
+          </PrivateRoute>
+        ),
         loader: () => fetch("/skilledData.json"),
       },
       {
         path: "/myProfile",
-        element: <MyProfile></MyProfile>,
+        element: (
+          <PrivateRoute>
+            <MyProfile></MyProfile>,
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/updateProfile",
+        element: <UpdateProfile></UpdateProfile>,
+      },
+      {
+        path: "/forgetPass",
+        element: <ForgetPass></ForgetPass>,
       },
     ],
   },
