@@ -3,14 +3,20 @@ import { FaGraduationCap, FaUserTie } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import { MdLogin } from "react-icons/md";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
-  // const handleLogOut = () => {
-  //   // console.log("Log Out");
-  //   logOut();
-  // };
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.success("You have logged out successfully 👋");
+      })
+      .catch((error) => {
+        toast.error("Logout failed: " + error.message);
+      });
+  };
   return (
     <div>
       <div className="navbar bg-emerald-100 shadow-md">
@@ -71,24 +77,26 @@ const Navbar = () => {
         {user ? (
           <div className="navbar-end flex items-center gap-4 mr-1">
             <div className="group relative flex flex-col items-center">
-              <img
-                className="rounded-full border border-emerald-600 cursor-pointer transition-transform duration-300 group-hover:scale-110"
-                width="50"
-                height="50"
-                src={
-                  user?.photoURL ||
-                  "https://img.icons8.com/3d-fluency/94/guest-male--v3.png"
-                }
-                alt="user"
-              />
+              <Link to="/myProfile">
+                <img
+                  className="rounded-full border border-emerald-600 cursor-pointer transition-transform duration-300 group-hover:scale-110"
+                  width="50"
+                  height="50"
+                  src={
+                    user?.photoURL ||
+                    "https://img.icons8.com/3d-fluency/94/guest-male--v3.png"
+                  }
+                  alt="user"
+                />
+              </Link>
               <h2 className="absolute left-[-120px] top-[10px] text-sm bg-emerald-500 text-white p-2 rounded-md font-bold  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {user?.displayName || "Guest"}
               </h2>
             </div>
 
             <button
-              onClick={logOut}
-              className="btn bg-emerald-600 hover:bg-cyan-700 text-white"
+              onClick={handleLogOut}
+              className="btn bg-lime-600 hover:bg-cyan-900 text-white"
             >
               Log Out
             </button>
