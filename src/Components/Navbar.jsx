@@ -104,16 +104,23 @@ const Navbar = () => {
         ) : (
           <div className="navbar-end flex items-center gap-1 lg:gap-4 mr-1">
             <img
-              width="40"
-              height="40"
-              src="https://img.icons8.com/dotty/80/test-account.png"
+              width="50"
+              height="50"
+              src="https://img.icons8.com/3d-fluency/94/change-user.png"
               alt="test-account"
+              className="border border-b-fuchsia-800 border-t-red-800 rounded-full hidden lg:block"
             />
             <Link
               to="/auth/login"
               className="btn bg-emerald-600 hover:bg-cyan-700 text-white"
             >
               Log In
+            </Link>
+            <Link
+              to="/auth/Register"
+              className="btn bg-emerald-600 hover:bg-cyan-700 text-white"
+            >
+              Register
             </Link>
           </div>
         )}

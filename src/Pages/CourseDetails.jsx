@@ -2,6 +2,7 @@ import { useLoaderData, useParams, useNavigate } from "react-router";
 import BookingForm from "../Pages/BookingForm";
 import MyLoader from "../Pages/MyLoader";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const CourseDetails = () => {
   const navigate = useNavigate();
@@ -28,6 +29,15 @@ const CourseDetails = () => {
     );
   }
 
+  const handleEnroll = async () => {
+    const enrollPromise = new Promise((resolve) => setTimeout(resolve, 2000));
+
+    toast.promise(enrollPromise, {
+      loading: "Enrolling...",
+      success: `You have successfully enrolled in "${skill.skillName}" 🎓`,
+      error: "Enrollment failed. Please try again.",
+    });
+  };
   return (
     <div>
       {/* --- Course --- */}
@@ -73,7 +83,10 @@ const CourseDetails = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <button className="flex-1 btn bg-emerald-500 hover:bg-emerald-700 text-white text-base shadow-md transition-all duration-300">
+            <button
+              onClick={handleEnroll}
+              className="flex-1 btn bg-emerald-500 hover:bg-emerald-700 text-white text-base shadow-md transition-all duration-300"
+            >
               Enroll Now
             </button>
             <button

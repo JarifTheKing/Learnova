@@ -44,7 +44,6 @@ const Home = () => {
           Top Rated Providers !
         </h2>
 
-        {/* Provider Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card-1 */}
           <div className="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden text-center p-6 border border-emerald-100 hover:-translate-y-2">
@@ -69,7 +68,7 @@ const Home = () => {
           </div>
 
           {/* Card-2 */}
-          <div className="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden text-center p-6 border border-emerald-100 hover:-translate-y-2">
+          <div className="bg-white hidden sm:block rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden text-center p-6 border border-emerald-100 hover:-translate-y-2">
             <img
               src="/james.jpeg"
               alt="James Miller"
@@ -91,7 +90,7 @@ const Home = () => {
           </div>
 
           {/* Card-3 */}
-          <div className="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden text-center p-6 border border-emerald-100 hover:-translate-y-2">
+          <div className="bg-white hidden sm:block rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden text-center p-6 border border-emerald-100 hover:-translate-y-2">
             <img
               src="/ethen.jpeg"
               alt="Ethan Brown"
@@ -109,6 +108,72 @@ const Home = () => {
               A cybersecurity expert and ethical hacker, Ethan teaches practical
               security concepts to help students protect systems and build safe
               apps.
+            </p>
+          </div>
+
+          {/* Card-4 */}
+          <div className="bg-white hidden sm:block rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden text-center p-6 border border-emerald-100 hover:-translate-y-2">
+            <img
+              src="/Emily.jpeg"
+              alt="Emily Davis"
+              className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-emerald-200 mb-4 transition-transform duration-300 hover:scale-105"
+            />
+            <h3 className="text-xl font-semibold text-emerald-700">
+              Emily Davis
+            </h3>
+            <p className="text-gray-500 text-sm">Graphic Design</p>
+            <div className="flex items-center justify-center gap-1 mt-3">
+              <FaStar className="text-yellow-500" />
+              <span className="font-medium text-gray-700">4.7</span>
+            </div>
+            <p className="text-gray-600 mt-4 text-sm leading-relaxed">
+              A creative designer with 8+ years in branding and digital art,
+              Emily empowers learners to express ideas visually using modern
+              design tools.
+            </p>
+          </div>
+
+          {/* Card-5 */}
+          <div className="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden text-center p-6 border border-emerald-100 hover:-translate-y-2">
+            <img
+              src="/Liam.jpeg"
+              alt="Liam Thompson"
+              className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-emerald-200 mb-4 transition-transform duration-300 hover:scale-105"
+            />
+            <h3 className="text-xl font-semibold text-emerald-700">
+              Liam Thompson
+            </h3>
+            <p className="text-gray-500 text-sm">Digital Marketing</p>
+            <div className="flex items-center justify-center gap-1 mt-3">
+              <FaStar className="text-yellow-500" />
+              <span className="font-medium text-gray-700">4.8</span>
+            </div>
+            <p className="text-gray-600 mt-4 text-sm leading-relaxed">
+              Liam helps students master SEO, content strategy, and ads
+              management, offering real-world techniques to grow businesses
+              online.
+            </p>
+          </div>
+
+          {/* Card-6 */}
+          <div className="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden text-center p-6 border border-emerald-100 hover:-translate-y-2">
+            <img
+              src="/Olivia.jpeg"
+              alt="Olivia Martinez"
+              className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-emerald-200 mb-4 transition-transform duration-300 hover:scale-105"
+            />
+            <h3 className="text-xl font-semibold text-emerald-700">
+              Olivia Martinez
+            </h3>
+            <p className="text-gray-500 text-sm">UI/UX Design</p>
+            <div className="flex items-center justify-center gap-1 mt-3">
+              <FaStar className="text-yellow-500" />
+              <span className="font-medium text-gray-700">5.0</span>
+            </div>
+            <p className="text-gray-600 mt-4 text-sm leading-relaxed">
+              Olivia is a UX strategist and mentor who teaches user-centered
+              design, usability testing, and how to create delightful digital
+              experiences.
             </p>
           </div>
         </div>
