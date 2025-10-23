@@ -179,10 +179,10 @@ const Home = () => {
         </div>
       </div>
 
-      {/* --- Teachers --- */}
-      <div className="flex flex-col md:flex-row w-full p-8 gap-10 rounded-xl shadow-xl my-10 bg-emerald-50">
+      {/* --- Choose--- */}
+      <div className="flex flex-col lg:flex-row w-full p-8 gap-10 rounded-xl shadow-xl my-10 bg-emerald-50">
         {/* Text Section */}
-        <div className="w-full md:w-1/2 space-y-6">
+        <div className="w-full lg:w-1/2 space-y-6">
           <p className="text-gray-400 font-semibold">Why Choose Learnova</p>
           <h2 className="text-4xl font-bold text-emerald-600 leading-snug">
             Learn Smarter, Grow Faster with Our Online Courses
@@ -215,24 +215,24 @@ const Home = () => {
         </div>
 
         {/* Images Section */}
-        <div className="relative grid grid-cols-2 md:flex md:flex-nowrap gap-3 justify-center items-center">
+        <div className="relative grid grid-cols-2 lg:flex lg:flex-nowrap gap-3 justify-center items-center">
           <img
-            className="w-full h-64 md:h-80 object-cover rounded-lg border-2 border-white shadow-md md:mt-[-80px]"
+            className="w-full h-64 lg:h-80 object-cover rounded-lg border-2 border-white shadow-md lg:mt-[-80px]"
             src="/girl-1.jpg"
             alt="Instructor 1"
           />
           <img
-            className="w-full h-64 md:h-80 object-cover rounded-lg border-2 border-white shadow-md md:mt-[40px]"
+            className="w-full h-64 lg:h-80 object-cover rounded-lg border-2 border-white shadow-md lg:mt-[40px]"
             src="/man-1.jpg"
             alt="Instructor 2"
           />
           <img
-            className="w-full h-64 md:h-80 object-cover rounded-lg border-2 border-white shadow-md md:mt-[-70px]"
+            className="w-full h-64 lg:h-80 object-cover rounded-lg border-2 border-white shadow-md lg:mt-[-70px]"
             src="/girl-2.jpg"
             alt="Instructor 3"
           />
           <img
-            className="w-full h-64 md:h-80 object-cover rounded-lg border-2 border-white shadow-md md:mt-[80px]"
+            className="w-full h-64 lg:h-80 object-cover rounded-lg border-2 border-white shadow-md lg:mt-[80px]"
             src="/man-2.jpg"
             alt="Instructor 4"
           />
