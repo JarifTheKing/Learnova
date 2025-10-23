@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
   const { register, setUser } = useContext(AuthContext);
@@ -105,6 +106,16 @@ const Register = () => {
                 Register
               </button>
             </form>
+
+            {/* OR Divider */}
+            <div className="divider text-white mt-6">OR</div>
+
+            {/* Social Logins */}
+            <div className="space-y-5">
+              <button className="btn btn-outline btn-primary w-full text-white">
+                <FcGoogle className="text-xl mr-2" /> Continue with Google
+              </button>
+            </div>
 
             {/* Login Link */}
             <p className="text-center text-white mt-6 text-sm sm:text-base">

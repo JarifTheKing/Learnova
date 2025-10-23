@@ -95,10 +95,6 @@ const LogIn = () => {
               <button className="btn btn-outline btn-primary w-full text-white">
                 <FcGoogle className="text-xl mr-2" /> Continue with Google
               </button>
-              <button className="btn btn-outline btn-info w-full">
-                <FaGithub className="text-xl mr-2" />
-                Continue with Github
-              </button>
             </div>
 
             {/* Register Link */}

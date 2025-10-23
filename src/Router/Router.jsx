@@ -14,17 +14,21 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        index: true,
-        element: <Home></Home>,
-        loader: () => fetch("/skilledData.json"),
+        path: "/",
+        element: <Home />,
+        loader: async () => {
+          const res = await fetch("/skilledData.json");
+          return res.json();
+        },
       },
       {
         path: "/courseCard",
         element: <CourseCard></CourseCard>,
       },
       {
-        path: "/courseDetails",
+        path: "/courseDetails/:id",
         element: <CourseDetails></CourseDetails>,
+        loader: () => fetch("/skilledData.json"),
       },
       {
         path: "/myProfile",

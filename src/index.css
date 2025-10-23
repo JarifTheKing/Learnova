@@ -13,6 +13,11 @@
   font-family: "Bitcount Grid Single", system-ui;
 }
 
+a.active {
+  border-bottom: 2px solid rgb(241, 131, 103);
+  border-radius: 6px;
+}
+
 /* Form Animation */
 @keyframes border {
   0% {

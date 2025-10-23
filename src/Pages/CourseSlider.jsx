@@ -33,14 +33,17 @@ const CourseSlider = ({ skillsData }) => {
                 className="w-full h-100 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-lg font-semibold text-emerald-600">
+                <h3 className="text-xl font-bold text-emerald-600">
                   {course.skillName}
                 </h3>
-                <p className="text-sm text-gray-600 mt-2 line-clamp-2">
-                  {course.description}
+
+                <p className="text-emerald-600 font-semibold mt-2">
+                  <span className="text-black text-sm">Provided By: </span>
+                  {course.providerName}
                 </p>
-                <p className="text-emerald-600 font-bold mt-2">
-                  ${course.price}
+                <p className="text-emerald-600 font-semibold mt-2">
+                  <span className="text-black text-sm">Category: </span>
+                  {course.category}
                 </p>
               </div>
             </div>

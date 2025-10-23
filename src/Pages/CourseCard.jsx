@@ -6,9 +6,8 @@ const CourseCard = ({ skill }) => {
 
   return (
     <div className="flex justify-center">
-      <div className="card bg-base-100 w-[320px] h-[450px] shadow-md border border-amber-100 flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-        {/* Image Section */}
-        <figure className="rounded-t-lg bg-gray-100 h-[200px] overflow-hidden">
+      <div className="card bg-base-100 w-full sm:w-[320px] h-[450px] shadow-md border border-amber-100 flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <figure className="rounded-t-lg  bg-gray-100 h-[200px] overflow-hidden">
           <img
             className="object-cover w-full h-full"
             src={image}
@@ -16,7 +15,6 @@ const CourseCard = ({ skill }) => {
           />
         </figure>
 
-        {/* Content Section */}
         <div className="card-body flex flex-col justify-between px-4 py-4">
           <div>
             <h2 className="card-title text-lg font-semibold text-gray-800 truncate">
@@ -27,11 +25,11 @@ const CourseCard = ({ skill }) => {
 
             <div className="flex justify-between items-center text-sm text-gray-700">
               <p>⭐ Rating: {rating}</p>
-              <p> Price: {price} $</p>
+              <p> Price: $ {price}</p>
             </div>
           </div>
 
-          <Link to="/courseDetails" className="mt-4">
+          <Link to={`/courseDetails/${skill.skillId}`} className="mt-4">
             <button className="btn w-full bg-emerald-600 hover:bg-cyan-700 text-white text-sm sm:text-base">
               View Details
             </button>

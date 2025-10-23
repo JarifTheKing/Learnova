@@ -38,33 +38,30 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <NavLink to="/">
-                <li className="font-bold text-emerald-500">
-                  <a>Home</a>
-                </li>
+                <li className="font-bold text-emerald-500">Home</li>
               </NavLink>
               <NavLink to="/myProfile">
-                <li className="font-bold text-emerald-500">
-                  <a>My Profile</a>
-                </li>
+                <li className="font-bold text-emerald-500">My Profile</li>
               </NavLink>
             </ul>
           </div>
-          <Link to="/">
-            <a className="btn btn-ghost text-xl lg:text-4xl font-bold text-emerald-500 fontStyle ">
-              <FaGraduationCap className="lg:text-4xl text-xl" /> LEARNOVA
-            </a>
+          <Link
+            to="/"
+            className="btn btn-ghost text-xl lg:text-4xl font-bold text-emerald-500 fontStyle "
+          >
+            <FaGraduationCap className="lg:text-4xl text-xl" /> LEARNOVA
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 flex gap-x-6">
             <NavLink to="/">
-              <li className="font-bold text-emerald-500">
-                <a>Home</a>
+              <li className="font-bold text-emerald-500 hover:bg-gray-400 hover:text-white   p-1 rounded-md  cursor-pointer">
+                Home
               </li>
             </NavLink>
             <NavLink to="/myProfile">
-              <li className="font-bold text-emerald-500">
-                <a>My Profile</a>
+              <li className="font-bold text-emerald-500 hover:bg-gray-400 hover:text-white  p-1 rounded-md cursor-pointer">
+                My Profile
               </li>
             </NavLink>
           </ul>
@@ -105,10 +102,11 @@ const Navbar = () => {
               alt="test-account"
             />
 
-            <Link to="/auth/login">
-              <a className="btn  bg-emerald-600 hover:bg-cyan-700 text-white">
-                Log In <MdLogin className="text-xl" />
-              </a>
+            <Link
+              to="/auth/login"
+              className="btn  bg-emerald-600 hover:bg-cyan-700 text-white"
+            >
+              Log In <MdLogin className="text-xl" />
             </Link>
           </div>
         )}
