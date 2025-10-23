@@ -23,7 +23,6 @@ const Root = () => {
           draggable
           theme="colored"
         /> */}
-        <Toaster position="top-center" reverseOrder={false} />
         {navigation.state === "loading" ? <MyLoader /> : <Outlet />}
       </div>
       <Footer />

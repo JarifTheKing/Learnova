@@ -6,11 +6,7 @@ const Footer = () => {
     <div>
       <footer className="footer footer-horizontal footer-center shadow-lg bg-emerald-100 text-base-content rounded p-10">
         <ul className="grid grid-flow-col font-bold gap-4">
-          <Link
-            to="https://web.programming-hero.com/about-us"
-            target="_blank"
-            className="hover:text-emerald-700"
-          >
+          <Link to="/" target="_blank" className="hover:text-emerald-700">
             About us
           </Link>
           <Link to="/" className="hover:text-emerald-700">

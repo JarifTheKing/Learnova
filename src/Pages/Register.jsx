@@ -8,7 +8,13 @@ import { IoEyeOff } from "react-icons/io5";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  const { register, setUser, updateProfileFunc } = useContext(AuthContext);
+  const {
+    register,
+    setUser,
+    updateProfileFunc,
+    setLoading,
+    signInWithGoogleFunc,
+  } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -51,12 +57,28 @@ const Register = () => {
           })
           .catch((e) => {
             console.log(e);
-            toast.error(e.message);
+            toast.error(e.code);
           });
       })
       .catch((e) => {
         console.log(e);
-        toast.error(e.message);
+        toast.error(e.code);
+      });
+  };
+
+  // --- Log In With Google ---
+  const handleGoogleSignin = () => {
+    setLoading(true);
+    signInWithGoogleFunc()
+      .then((res) => {
+        setLoading(false);
+        setUser(res.user);
+        toast.success("Login successful with Google 🎉");
+        navigate("/");
+      })
+      .catch((e) => {
+        setLoading(false);
+        toast.error(e.code);
       });
   };
 
@@ -138,13 +160,12 @@ const Register = () => {
                   {show ? <FaEye /> : <IoEyeOff />}
                 </span>
 
-                <p className="text-sm text-center text-red-200 mt-5 mb-8">
+                {/* <p className="text-[12px] text-start border-b border-amber-500 text-red-200 mt-5 mb-8 inline-block">
                   Use uppercase, lowercase, number & special character.
-                </p>
+                </p> */}
 
-                {/* Dynamic error under field */}
                 {passwordError && (
-                  <p className="text-red-400 text-center text-sm mt-[-10px] mb-2">
+                  <p className="text-White bg-red-500 p-2 rounded-md  text-center text-[14px] mt-[10px] mb-2 text-start">
                     {passwordError}
                   </p>
                 )}
@@ -164,7 +185,10 @@ const Register = () => {
 
             {/* Google Login */}
             <div className="space-y-5">
-              <button className="btn btn-outline btn-primary w-full text-white">
+              <button
+                onClick={handleGoogleSignin}
+                className="btn btn-outline btn-primary w-full text-white"
+              >
                 <FcGoogle className="text-xl mr-2" /> Continue with Google
               </button>
             </div>

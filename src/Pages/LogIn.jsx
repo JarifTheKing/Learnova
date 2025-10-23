@@ -8,7 +8,7 @@ import { IoEyeOff } from "react-icons/io5";
 import toast from "react-hot-toast";
 
 const LogIn = () => {
-  const { createUser, setUser, setLoading, user, signInWithGoogleFunc } =
+  const { logIn, setUser, setLoading, user, signInWithGoogleFunc, loading } =
     useContext(AuthContext);
 
   const [show, setShow] = useState(false);
@@ -17,19 +17,21 @@ const LogIn = () => {
   const location = useLocation();
   const emailRef = useRef(null);
 
-  const from = location.state?.from || "/";
+  const from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
     if (user) navigate("/");
   }, [user, navigate]);
 
-  //Log In With Email
+  // --- Log In With Email ---
   const handleLoginWithEmail = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    createUser(email, password)
+    setLoading(true);
+
+    logIn(email, password)
       .then((res) => {
         const user = res.user;
         setLoading(false);
@@ -39,12 +41,14 @@ const LogIn = () => {
       })
       .catch((error) => {
         console.log(error);
-        toast.error(error.message);
+        setLoading(false);
+        toast.error(error.code);
       });
   };
 
-  // Log In With Google
+  // --- Log In With Google ---
   const handleGoogleSignin = () => {
+    setLoading(true);
     signInWithGoogleFunc()
       .then((res) => {
         setLoading(false);
@@ -52,10 +56,13 @@ const LogIn = () => {
         toast.success("Login successful with Google 🎉");
         navigate(from);
       })
-      .catch((e) => toast.error(e.message));
+      .catch((e) => {
+        setLoading(false);
+        toast.error(e.code);
+      });
   };
 
-  //  Forget Password
+  // --- Forget Password ---
   // const handleForgetPassword = () => {
   //   const email = emailRef.current?.value;
   //   if (!email) {
@@ -82,7 +89,6 @@ const LogIn = () => {
               <p className="text-sm sm:text-base mt-1">Login to your account</p>
             </div>
 
-            {/*Form */}
             <form onSubmit={handleLoginWithEmail} className="space-y-4">
               {/* Email */}
               <div>
@@ -134,12 +140,12 @@ const LogIn = () => {
                 </button>
               </div>
 
-              {/* Button */}
               <button
                 type="submit"
+                disabled={loading}
                 className="btn btn-primary w-full bg-emerald-500 hover:bg-emerald-600 border-none text-white"
               >
-                Log In
+                {loading ? "Logging in..." : "Log In"}
               </button>
             </form>
 
@@ -150,6 +156,7 @@ const LogIn = () => {
             <div className="space-y-5">
               <button
                 onClick={handleGoogleSignin}
+                disabled={loading}
                 className="btn btn-outline btn-primary w-full text-white"
               >
                 <FcGoogle className="text-xl mr-2" /> Continue with Google
