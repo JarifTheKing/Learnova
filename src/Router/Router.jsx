@@ -11,6 +11,10 @@ import PrivateRoute from "../PrivetRouter/PrivetRoute";
 import UpdateProfile from "../Pages/UpdateProfile";
 import ForgetPass from "../Pages/ForgetPass";
 import ErrorPage from "../Pages/ErrorPage";
+import About from "../Pages/About";
+import Contact from "../Pages/Contact";
+import Support from "../Pages/Support";
+import AllCourses from "../Pages/AllCourses";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +28,26 @@ const router = createBrowserRouter([
           const res = await fetch("/skilledData.json");
           return res.json();
         },
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/all-courses",
+        element: <AllCourses></AllCourses>,
+        loader: async () => {
+          const res = await fetch("/skilledData.json");
+          return res.json();
+        },
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/support",
+        element: <Support></Support>,
       },
       {
         path: "/courseCard",

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import Container from "../Shared/Container";
 // import { toast } from "react-toastify";
 
 const BookingSection = () => {
@@ -26,7 +27,7 @@ const BookingSection = () => {
 
   return (
     <div>
-      <div className="min-h-screen mt-8 rounded-xl flex items-center justify-center bg-[url('/newGlass.jpg')] bg-black/60 bg-blend-overlay bg-cover bg-center bg-no-repeat px-4 sm:px-6 md:px-8">
+      <div className="min-h-screen my-8 rounded-xl flex items-center justify-center bg-[url('/newGlass.jpg')] bg-black/60 bg-blend-overlay bg-cover bg-center bg-no-repeat px-4 sm:px-6 md:px-8">
         <div className="relative w-full max-w-md p-[3px] rounded-2xl border border-emerald-400 hover:shadow-[0_0_40px_rgba(16,185,129,0.7)] transition-all duration-500">
           <div className=" bg-white/10 rounded-2xl p-8 flex flex-col justify-center text-white shadow-lg">
             <h2 className="text-2xl text-center mb-8 font-semibold">

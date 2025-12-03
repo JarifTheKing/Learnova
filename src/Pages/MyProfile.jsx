@@ -8,7 +8,7 @@ const MyProfile = () => {
   return (
     <div className="min-h-screen my-6 flex items-center justify-center bg-[url('/birdE.jpg')] bg-black/50 bg-blend-overlay bg-cover bg-center bg-no-repeat rounded-lg px-4 sm:px-6 md:px-8">
       <div className="max-w-md w-full bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl p-8 text-center border border-emerald-400">
-        <h2 className="text-3xl font-bold text-emerald-400 mb-6 fontStyle">
+        <h2 className="text-3xl font-bold text-emerald-400 mb-6 ">
           My Profile
         </h2>
 

@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 
 const CourseSlider = ({ skillsData }) => {
   return (
-    <div className="my-2">
+    <div className="">
       {/* <h2 className="text-3xl font-bold text-center mb-6">Popular Courses</h2> */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
@@ -26,11 +26,11 @@ const CourseSlider = ({ skillsData }) => {
       >
         {skillsData.map((course) => (
           <SwiperSlide key={course.skillId}>
-            <div className="bg-white rounded-xl shadow-md border border-amber-100 overflow-hidden hover:shadow-xl transition duration-300 ">
+            <div className="bg-white rounded-t-3xl shadow-md   overflow-hidden hover:shadow-xl transition duration-300 ">
               <img
                 src={course.image}
                 alt={course.skillName}
-                className="w-full h-100 object-cover"
+                className="w-full h-60 object-cover"
               />
               <div className="p-4">
                 <h3 className="text-xl font-bold text-emerald-600">

@@ -6,7 +6,7 @@ const CourseCard = ({ skill }) => {
 
   return (
     <div className="flex justify-center">
-      <div className="card bg-base-100 w-full sm:w-[320px] h-[450px] shadow-md border border-amber-100 flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+      <div className="card bg-base-100 w-full sm:w-[320px] h-[300px] shadow-md  flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-lg">
         <figure className="rounded-t-lg  bg-gray-100 h-[200px] overflow-hidden">
           <img
             className="object-cover w-full h-full"
