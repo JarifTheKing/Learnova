@@ -1,5 +1,8 @@
          LEARNOVA – Online Course Selling Website
 
+         Live Site: - https://learnova-sand-delta.vercel.app/
+         Repo : https://github.com/JarifTheKing/Learnova
+
 This Website is a Online courses selling website. Anyone can learn or buy the courses easily. it has also course details page. To explore full website need to register or logIn. If forget password you can set new one.
 
 !!-= Technologies & Tools Used:
